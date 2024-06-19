@@ -1,0 +1,42 @@
+<p>Student works!</p>
+
+<div class="container mt-5">
+  <form [formGroup]="userform">
+    <div class="col-lg-4 mt-2">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Name"
+        formControlName="name"
+      />
+    </div>
+    <div class="col-lg-4 mt-2">
+      <input
+        type="email"
+        class="form-control"
+        placeholder="Enter Email"
+        formControlName="email"
+      />
+    </div>
+    <div class="col-lg-4 mt-2">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter Mobile no."
+        formControlName="mobile"
+      />
+    </div>
+    <div class="col-lg-4 mt-2" *ngIf="!getParamsid" (click)="userSubmit()">
+      <button class="btn btn-primary btn-sm">Submit</button>&nbsp;
+      <button type="button" routerLink="" class="btn btn-dark btn-sm">
+        Back
+      </button>
+    </div>
+    <div class="col-lg-4 mt-2" *ngIf="getParamsid" (click)="userUpdate()">
+      <button class="btn btn-success btn-sm">Update</button>&nbsp;
+      <button type="button" routerLink="" class="btn btn-dark btn-sm">
+        Back
+      </button>
+    </div>
+  </form>
+</div>
